@@ -1,3 +1,6 @@
-res://scenes/cameras/MainCamera.tscn
-res://scenes/world/WorldGen.gd
-res://scenes/main.tscn
+res://scenes/world/MainWorld.tscn
+res://scenes/world/MainWorld.gd
+res://scenes/world/cell/cell.tscn
+res://scenes/world/cell/cell.gd
+res://scenes/world/cell/basic/basic.tscn
+res://scenes/world/cell/empty/empty.tscn

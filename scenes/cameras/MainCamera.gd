@@ -3,6 +3,8 @@ extends Camera2D
 @export var x_speed : int = 20 
 @export var y_speed : int = 20
 
+signal camera_moved(camera_position: Vector2)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,10 +15,10 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		translate(Vector2(0, -y_speed))
+		camera_moved.emit(Vector2(offset.x, offset.y))
 	if Input.is_action_pressed("ui_down"):
 		translate(Vector2(0, y_speed))	
 	if Input.is_action_pressed("ui_right"):
 		translate(Vector2(x_speed, 0))	
 	if Input.is_action_pressed("ui_left"):
 		translate(Vector2(-x_speed, 0))		
-	

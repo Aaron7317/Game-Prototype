@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvjrc3mbxt5do"]
+[gd_scene load_steps=7 format=3 uid="uid://1tnn6hajwact"]
 
 [ext_resource type="Texture2D" uid="uid://cr0bwdu1383e4" path="res://assets/textures/world/base/StandardBlock.png" id="1_2m7i1"]
-[ext_resource type="Script" path="res://scenes/world/WorldGen.gd" id="1_xpgfb"]
+[ext_resource type="Script" path="res://scenes/world/MainWorld.gd" id="1_dvi66"]
+[ext_resource type="PackedScene" uid="uid://dflov6b5gq4yr" path="res://scenes/world/cell/basic/basic.tscn" id="2_q83ed"]
+[ext_resource type="PackedScene" uid="uid://dlhcr0q7ogndf" path="res://scenes/world/cell/empty/empty.tscn" id="3_5wpgj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxl0h"]
 texture = ExtResource("1_2m7i1")
@@ -584,7 +586,9 @@ terrain_set_0/terrain_0/color = Color(0.486275, 1, 0.235294, 1)
 sources/1 = SubResource("TileSetAtlasSource_fxl0h")
 
 [node name="MainWorld" type="Node2D"]
-script = ExtResource("1_xpgfb")
+script = ExtResource("1_dvi66")
+basic_ground = ExtResource("2_q83ed")
+empty_tile = ExtResource("3_5wpgj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_axxt1")
